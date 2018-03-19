@@ -2,14 +2,18 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
     <parent>
-        <artifactId>jbb-edge-parent</artifactId>
         <groupId>org.jbb.edge</groupId>
+        <artifactId>jbb-edge-parent</artifactId>
         <version>DEV-SNAPSHOT</version>
     </parent>
-    <modelVersion>4.0.0</modelVersion>
 
     <artifactId>jbb-edge-app</artifactId>
+
+    <name>jBB Edge WAR module</name>
+    <description>WAR for jBB edge frontend application</description>
+
     <packaging>war</packaging>
 
     <dependencies>
@@ -37,6 +41,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
+                <version>${dependency.maven.plugin.version}</version>
                 <executions>
                     <execution>
                         <id>unpack</id>
@@ -64,6 +69,4 @@
             </plugin>
         </plugins>
     </build>
-
-
 </project>

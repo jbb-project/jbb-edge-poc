@@ -2,14 +2,18 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
     <parent>
-        <artifactId>jbb-edge-parent</artifactId>
         <groupId>org.jbb.edge</groupId>
+        <artifactId>jbb-edge-parent</artifactId>
         <version>DEV-SNAPSHOT</version>
     </parent>
-    <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>jbb-edge-web</artifactId>
+  <artifactId>jbb-edge-web</artifactId>
+
+  <name>jBB Edge Angular module</name>
+  <description>Angular CLI project with jBB edge web application</description>
+
   <packaging>pom</packaging>
 
   <build>
@@ -17,6 +21,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-assembly-plugin</artifactId>
+        <version>${assembly.maven.plugin.version}</version>
         <configuration>
           <descriptors>
             <descriptor>assembly.xml</descriptor>
@@ -36,7 +41,7 @@
       <plugin>
         <groupId>com.github.eirslett</groupId>
         <artifactId>frontend-maven-plugin</artifactId>
-        <version>1.6</version>
+        <version>${frontend.maven.plugin.version}</version>
         <configuration>
           <installDirectory>target</installDirectory>
         </configuration>
@@ -47,8 +52,8 @@
               <goal>install-node-and-npm</goal>
             </goals>
             <configuration>
-              <nodeVersion>v9.8.0</nodeVersion>
-              <npmVersion>5.7.1</npmVersion>
+              <nodeVersion>${node.version}</nodeVersion>
+              <npmVersion>${npm.version}</npmVersion>
             </configuration>
           </execution>
           <execution>
@@ -71,6 +76,4 @@
       </plugin>
     </plugins>
   </build>
-
-
 </project>
